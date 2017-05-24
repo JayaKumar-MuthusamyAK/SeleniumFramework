@@ -70,7 +70,7 @@
 
 						<configuration>
 							<!-- From Email address -->
-							<from>---------@gmail.com</from>
+							<from>jakay507@gmail.com</from>
 
 							<!-- Email subject -->
 							<subject>Test Automation Report</subject>
@@ -86,8 +86,8 @@
 							<mailAltConfig>true</mailAltConfig>
 
 							<!-- Email Authentication(USername and Password) -->
-							<mailuser>-------@gmail.com</mailuser>
-							<mailpassword>**********</mailpassword>
+							<mailuser>jakay507@gmail.com</mailuser>
+							<mailpassword>bullet07@</mailpassword>
 
 							<receivers>
 								<!-- To Email address -->
@@ -97,7 +97,7 @@
 							<fileSets>
 								<fileSet>
 									<!-- Report directory Path -->
-									<directory>C://Users//admin//housingman//workspace//HMan_Desktop//Reports</directory>
+									<directory>C://Users//admin//housingman//workspace//HMan_Desktop//extented_Report_sample1.html</directory>
 									<includes>
 										<!-- Report file name -->
 										<include>TestReport.html</include>

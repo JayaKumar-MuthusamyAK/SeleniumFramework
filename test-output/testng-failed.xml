@@ -5,19 +5,11 @@
     <classes>
       <class name="com.testcases.Login_Page">
         <methods>
-          <include name="endTest"/>
           <include name="extentReportStart"/>
-          <include name="StartTest"/>
           <include name="extentReportEnd"/>
           <include name="testcase1" invocation-numbers="0 1 2 3 4 5"/>
         </methods>
       </class> <!-- com.testcases.Login_Page -->
-      <class name="com.testcases.SignUp_Page">
-        <methods>
-          <include name="StartTest"/>
-          <include name="end"/>
-        </methods>
-      </class> <!-- com.testcases.SignUp_Page -->
     </classes>
   </test> <!-- Login_Page Test(failed) -->
 </suite> <!-- Failed suite [Functionality Test] -->

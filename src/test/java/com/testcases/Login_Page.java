@@ -11,9 +11,11 @@ import com.util.TestUtil;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 
 import java.util.Hashtable;
@@ -23,19 +25,16 @@ import org.testng.SkipException;
 public class Login_Page {
 	WebDriver driver;
 
-	public static ExtentReports report = new ExtentReports("C://Users//admin//housingman//workspace//HMan_Desktop//extented_Report_sample1.html");
+	public static ExtentReports report = new ExtentReports(
+			"C://Users//admin//housingman//workspace//HMan_Desktop//extented_Report_sample1.html");
 	public static ExtentTest logger;
 
-	
 	@BeforeSuite
-	public void extentReportStart(){
-		 report = new ExtentReports("C://Users//admin//housingman//workspace//HMan_Desktop//extented_Report_sample1.html"); 
-	}
-	
-	@BeforeMethod
-	public void StartTest(){
+	public void extentReportStart() {
+		report = new ExtentReports(
+				"C://Users//admin//housingman//workspace//HMan_Desktop//extented_Report_sample1.html");
 		logger = report.startTest("Login Page Test", "Automation Test");
-		
+
 		logger.assignAuthor("JAYAKUMAR MUTHUSAMY");
 		logger.assignCategory("Loginn Page automation test for all scenarios");
 	}
@@ -59,19 +58,14 @@ public class Login_Page {
 		}
 
 	}
-	
-	@AfterMethod
-	public void endTest(){
-		report.endTest(logger);
-	}
+
 	@AfterSuite
-	public void extentReportEnd(){
-		
-	    report.flush();
-	    report.close();
+	public void extentReportEnd() {
+		report.endTest(logger);
+		report.flush();
+		report.close();
 	}
 
-	
 	@DataProvider
 	public Object[][] getData() {
 

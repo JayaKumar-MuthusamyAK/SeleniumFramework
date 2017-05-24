@@ -6,9 +6,11 @@ import org.testng.SkipException;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -21,12 +23,7 @@ import com.util.TestUtil;
 public class SignUp_Page {
 
 	
-	@BeforeMethod
-	public void StartTest(){
-		Login_Page.report.startTest("Sign Up Test");
-		
-	}
-	
+
 	@Test(dataProvider = "getData")
 	public void testcase2(Hashtable<String, String> data) throws Exception {
 
@@ -44,10 +41,6 @@ public class SignUp_Page {
 
 	}
 
-	@AfterMethod
-	public void end(){
-		Login_Page.report.endTest(Login_Page.logger);
-	}
 	
 	@DataProvider
 	public Object[][] getData() {

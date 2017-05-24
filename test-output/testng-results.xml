@@ -2,16 +2,12 @@
 <testng-results skipped="6" failed="0" total="7" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Functionality Test" duration-ms="31067" started-at="2017-05-23T17:50:28Z" finished-at="2017-05-23T17:50:59Z">
+  <suite name="Functionality Test" duration-ms="44903" started-at="2017-05-24T17:41:18Z" finished-at="2017-05-24T17:42:03Z">
     <groups>
     </groups>
-    <test name="Login_Page Test" duration-ms="756" started-at="2017-05-23T17:50:28Z" finished-at="2017-05-23T17:50:28Z">
+    <test name="Login_Page Test" duration-ms="641" started-at="2017-05-24T17:41:18Z" finished-at="2017-05-24T17:41:19Z">
       <class name="com.testcases.Login_Page">
-        <test-method status="PASS" signature="StartTest()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="StartTest" is-config="true" duration-ms="4" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StartTest -->
-        <test-method status="SKIP" signature="testcase1(java.util.Hashtable)[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="testcase1" duration-ms="8" started-at="2017-05-23T23:20:28Z" data-provider="getData" finished-at="2017-05-23T23:20:28Z">
+        <test-method status="SKIP" signature="testcase1(java.util.Hashtable)[pri:0, instance:com.testcases.Login_Page@184f6be2]" name="testcase1" duration-ms="9" started-at="2017-05-24T23:11:19Z" data-provider="getData" finished-at="2017-05-24T23:11:19Z">
           <params>
             <param index="0">
               <value>
@@ -25,7 +21,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Test case run mode is no
-	at com.testcases.Login_Page.testcase1(Login_Page.java:48)
+	at com.testcases.Login_Page.testcase1(Login_Page.java:47)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -56,11 +52,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase1 -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="endTest" is-config="true" duration-ms="5" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endTest -->
-        <test-method status="SKIP" signature="testcase1(java.util.Hashtable)[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="testcase1" duration-ms="3" started-at="2017-05-23T23:20:28Z" data-provider="getData" finished-at="2017-05-23T23:20:28Z">
+        <test-method status="SKIP" signature="testcase1(java.util.Hashtable)[pri:0, instance:com.testcases.Login_Page@184f6be2]" name="testcase1" duration-ms="2" started-at="2017-05-24T23:11:19Z" data-provider="getData" finished-at="2017-05-24T23:11:19Z">
           <params>
             <param index="0">
               <value>
@@ -74,7 +66,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Test case run mode is no
-	at com.testcases.Login_Page.testcase1(Login_Page.java:48)
+	at com.testcases.Login_Page.testcase1(Login_Page.java:47)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -105,19 +97,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase1 -->
-        <test-method status="PASS" signature="StartTest()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="StartTest" is-config="true" duration-ms="0" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StartTest -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="endTest" is-config="true" duration-ms="1" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endTest -->
-        <test-method status="PASS" signature="StartTest()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="StartTest" is-config="true" duration-ms="0" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StartTest -->
-        <test-method status="SKIP" signature="testcase1(java.util.Hashtable)[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="testcase1" duration-ms="2" started-at="2017-05-23T23:20:28Z" data-provider="getData" finished-at="2017-05-23T23:20:28Z">
+        <test-method status="SKIP" signature="testcase1(java.util.Hashtable)[pri:0, instance:com.testcases.Login_Page@184f6be2]" name="testcase1" duration-ms="2" started-at="2017-05-24T23:11:19Z" data-provider="getData" finished-at="2017-05-24T23:11:19Z">
           <params>
             <param index="0">
               <value>
@@ -131,7 +111,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Test case run mode is no
-	at com.testcases.Login_Page.testcase1(Login_Page.java:48)
+	at com.testcases.Login_Page.testcase1(Login_Page.java:47)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -162,15 +142,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase1 -->
-        <test-method status="PASS" signature="StartTest()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="StartTest" is-config="true" duration-ms="1" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StartTest -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="endTest" is-config="true" duration-ms="0" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endTest -->
-        <test-method status="SKIP" signature="testcase1(java.util.Hashtable)[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="testcase1" duration-ms="2" started-at="2017-05-23T23:20:28Z" data-provider="getData" finished-at="2017-05-23T23:20:28Z">
+        <test-method status="SKIP" signature="testcase1(java.util.Hashtable)[pri:0, instance:com.testcases.Login_Page@184f6be2]" name="testcase1" duration-ms="2" started-at="2017-05-24T23:11:19Z" data-provider="getData" finished-at="2017-05-24T23:11:19Z">
           <params>
             <param index="0">
               <value>
@@ -184,7 +156,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Test case run mode is no
-	at com.testcases.Login_Page.testcase1(Login_Page.java:48)
+	at com.testcases.Login_Page.testcase1(Login_Page.java:47)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -215,15 +187,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase1 -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="endTest" is-config="true" duration-ms="0" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endTest -->
-        <test-method status="PASS" signature="StartTest()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="StartTest" is-config="true" duration-ms="1" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StartTest -->
-        <test-method status="SKIP" signature="testcase1(java.util.Hashtable)[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="testcase1" duration-ms="3" started-at="2017-05-23T23:20:28Z" data-provider="getData" finished-at="2017-05-23T23:20:28Z">
+        <test-method status="SKIP" signature="testcase1(java.util.Hashtable)[pri:0, instance:com.testcases.Login_Page@184f6be2]" name="testcase1" duration-ms="2" started-at="2017-05-24T23:11:19Z" data-provider="getData" finished-at="2017-05-24T23:11:19Z">
           <params>
             <param index="0">
               <value>
@@ -237,7 +201,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Test case run mode is no
-	at com.testcases.Login_Page.testcase1(Login_Page.java:48)
+	at com.testcases.Login_Page.testcase1(Login_Page.java:47)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -268,11 +232,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase1 -->
-        <test-method status="SKIP" signature="testcase1(java.util.Hashtable)[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="testcase1" duration-ms="2" started-at="2017-05-23T23:20:28Z" data-provider="getData" finished-at="2017-05-23T23:20:28Z">
+        <test-method status="SKIP" signature="testcase1(java.util.Hashtable)[pri:0, instance:com.testcases.Login_Page@184f6be2]" name="testcase1" duration-ms="2" started-at="2017-05-24T23:11:19Z" data-provider="getData" finished-at="2017-05-24T23:11:19Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{Status=, Password=12345678, Runmode=Y, Expected_Result=, Email=jakay34@gmail.com}]]>
+                <![CDATA[{Status=, Password=12345678, Runmode=N, Expected_Result=, Email=jakay34@gmail.com}]]>
               </value>
             </param>
           </params>
@@ -282,7 +246,7 @@
             </message>
             <full-stacktrace>
               <![CDATA[org.testng.SkipException: Test case run mode is no
-	at com.testcases.Login_Page.testcase1(Login_Page.java:48)
+	at com.testcases.Login_Page.testcase1(Login_Page.java:47)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -313,23 +277,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase1 -->
-        <test-method status="PASS" signature="StartTest()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="StartTest" is-config="true" duration-ms="0" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StartTest -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="endTest" is-config="true" duration-ms="0" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endTest -->
-        <test-method status="PASS" signature="endTest()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="endTest" is-config="true" duration-ms="1" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- endTest -->
       </class> <!-- com.testcases.Login_Page -->
     </test> <!-- Login_Page Test -->
-    <test name="Sign_Up Page Test" duration-ms="30277" started-at="2017-05-23T17:50:28Z" finished-at="2017-05-23T17:50:59Z">
+    <test name="Sign_Up Page Test" duration-ms="44234" started-at="2017-05-24T17:41:19Z" finished-at="2017-05-24T17:42:03Z">
       <class name="com.testcases.SignUp_Page">
-        <test-method status="PASS" signature="testcase2(java.util.Hashtable)[pri:0, instance:com.testcases.SignUp_Page@528931cf]" name="testcase2" duration-ms="30268" started-at="2017-05-23T23:20:28Z" data-provider="getData" finished-at="2017-05-23T23:20:59Z">
+        <test-method status="PASS" signature="testcase2(java.util.Hashtable)[pri:0, instance:com.testcases.SignUp_Page@7a1ebcd8]" name="testcase2" duration-ms="44228" started-at="2017-05-24T23:11:19Z" data-provider="getData" finished-at="2017-05-24T23:12:03Z">
           <params>
             <param index="0">
               <value>
@@ -340,21 +292,13 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testcase2 -->
-        <test-method status="PASS" signature="StartTest()[pri:0, instance:com.testcases.SignUp_Page@528931cf]" name="StartTest" is-config="true" duration-ms="0" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- StartTest -->
-        <test-method status="PASS" signature="end()[pri:0, instance:com.testcases.SignUp_Page@528931cf]" name="end" is-config="true" duration-ms="0" started-at="2017-05-23T23:20:59Z" finished-at="2017-05-23T23:20:59Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- end -->
       </class> <!-- com.testcases.SignUp_Page -->
       <class name="com.testcases.Login_Page">
-        <test-method status="PASS" signature="extentReportStart()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="extentReportStart" is-config="true" duration-ms="11" started-at="2017-05-23T23:20:28Z" finished-at="2017-05-23T23:20:28Z">
+        <test-method status="PASS" signature="extentReportStart()[pri:0, instance:com.testcases.Login_Page@184f6be2]" name="extentReportStart" is-config="true" duration-ms="13" started-at="2017-05-24T23:11:18Z" finished-at="2017-05-24T23:11:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extentReportStart -->
-        <test-method status="PASS" signature="extentReportEnd()[pri:0, instance:com.testcases.Login_Page@1f7030a6]" name="extentReportEnd" is-config="true" duration-ms="496" started-at="2017-05-23T23:20:59Z" finished-at="2017-05-23T23:20:59Z">
+        <test-method status="PASS" signature="extentReportEnd()[pri:0, instance:com.testcases.Login_Page@184f6be2]" name="extentReportEnd" is-config="true" duration-ms="477" started-at="2017-05-24T23:12:03Z" finished-at="2017-05-24T23:12:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- extentReportEnd -->
