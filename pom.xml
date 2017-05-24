@@ -97,10 +97,10 @@
 							<fileSets>
 								<fileSet>
 									<!-- Report directory Path -->
-									<directory>C://Users//admin//housingman//workspace//HMan_Desktop//extented_Report_sample1.html</directory>
+									<directory>C://Users//admin//housingman//workspace//HMan_Desktop//</directory>
 									<includes>
 										<!-- Report file name -->
-										<include>TestReport.html</include>
+										<include>extented_Report_sample1.html</include>
 									</includes>
 									<!-- Use Regular Expressions like **/*.html if you want all the 
 										html files to send -->

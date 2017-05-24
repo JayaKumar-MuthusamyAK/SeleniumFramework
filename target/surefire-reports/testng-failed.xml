@@ -5,6 +5,8 @@
     <classes>
       <class name="com.testcases.Login_Page">
         <methods>
+          <include name="extentReportStart"/>
+          <include name="extentReportEnd"/>
           <include name="testcase1" invocation-numbers="0 1 2 3 4 5"/>
         </methods>
       </class> <!-- com.testcases.Login_Page -->
