@@ -14,7 +14,7 @@ public class TestUtil {
 	public static boolean isTestcaseExecutable(String testcases, Xls_Reader xls) {
 		for (int rNum = 2; rNum <= xls.getRowCount("Test Cases"); rNum++) {
 			if (testcases.equals(xls.getCellData("Test Cases", "TCID", rNum))) {
-				System.out.println(xls.getCellData("Test Cases", "TCID",rNum));
+				//System.out.println(xls.getCellData("Test Cases", "TCID",rNum));
 				if (xls.getCellData("Test Cases", "Runmode", rNum).equals("Y")) {
 					return true;
 				} else {

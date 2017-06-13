@@ -12,4 +12,12 @@
     <class name="com.testcases.SignUp_Page"/>
   </classes>
 </test> <!-- Test -->
+
+<test name="Broken_Link Test">
+<classes>
+<class name="com.testcases.Broken_LinkTest"/>
+</classes>
+
+</test> <!-- Test -->
+
 </suite> <!-- Suite -->

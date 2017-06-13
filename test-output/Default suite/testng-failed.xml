@@ -3,11 +3,11 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.util.SampleExtentrReport">
+      <class name="com.test.practices.SEO_BuildersURL">
         <methods>
-          <include name="ExportReport"/>
+          <include name="test_URL"/>
         </methods>
-      </class> <!-- com.util.SampleExtentrReport -->
+      </class> <!-- com.test.practices.SEO_BuildersURL -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

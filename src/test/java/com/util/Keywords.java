@@ -2,17 +2,27 @@ package com.util;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Hashtable;
+import java.util.List;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
+import java.util.logging.Logger;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import com.relevantcodes.extentreports.ExtentReports;
@@ -25,7 +35,8 @@ public class Keywords {
 	public static Xls_Reader xls = new Xls_Reader(
 			System.getProperty("user.dir") + "\\src\\test\\resources\\Test Suite1.xlsx");
 
-	// public Logger APP_LOGS=null;
+	HttpURLConnection conn=null;
+	public Logger APP_LOGS=null;
 
 	public WebDriver dr;
 	public Properties OR;
@@ -36,7 +47,9 @@ public class Keywords {
 	boolean isTaken = false;
 	File errorscr;
 	DateFormat date = new SimpleDateFormat("dd-MMM-yyyy__hh_mm_ssaa");
-
+	
+	WebDriverWait wait = null;
+	
 	public Keywords() {
 		try {
 			OR = new Properties();
@@ -57,7 +70,7 @@ public class Keywords {
 		String objectkeys = null;
 		String datakeys = null;
 
-		// APP_LOGS=Logger.getLogger("devpinoyLogger");
+		APP_LOGS=Logger.getLogger("devpinoyLogger");
 
 		for (int rNum = 2; rNum <= xls.getRowCount("Test Steps"); rNum++) {
 			if (testcases.equals(xls.getCellData("Test Steps", "TCID", rNum))) {
@@ -71,6 +84,8 @@ public class Keywords {
 				// datakeys);
 				Login_Page.logger.log(LogStatus.INFO, keyword + "--" + objectkeys + "--" + datakeys);
 				String result = null;
+				
+				
 				switch (keyword) {
 
 				case "openBrowser":
@@ -97,7 +112,23 @@ public class Keywords {
 				case "close":
 					result = close();
 					break;
-
+					
+				case "linkCheck":
+					result = linkCheck();
+					break;
+					
+				case "checkNavigateURL":
+					result = checkNavigateURL(data.get(datakeys));
+					break;
+					
+				case "checkPagination":
+					result = checkPagination(objectkeys,data.get(datakeys));
+					break;
+					
+				case "waitUtilFind":
+					result = waitUtilFind(obj.getLocator(objectkeys));
+					break;
+					
 				default:
 					System.out.println("No Matching any method. Please Add new method");
 
@@ -116,6 +147,13 @@ public class Keywords {
 
 	/* GENERAL KEYWORDS */
 
+
+	private String waitUtilFind(By locator) {
+		wait = new WebDriverWait(dr, 60);
+		wait.until(ExpectedConditions.visibilityOf(dr.findElement(locator)));
+		return "PASS";
+	}
+
 	public String openBrowser(String keys) {
 
 		if (OR.getProperty(keys).equals("firefox")) {
@@ -133,6 +171,7 @@ public class Keywords {
 			System.setProperty("webdriver.chrome.driver",
 					System.getProperty("user.dir") + "\\src\\test\\resources\\chromedriver.exe");
 			dr = new ChromeDriver();
+			dr.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		} else {
 			System.out.println("Not Matching the any Browser");
 			// APP_LOGS.debug("Not Matching the any Browser");
@@ -143,11 +182,70 @@ public class Keywords {
 
 	public String navigateURL(String keys) {
 
+		if(keys.startsWith("http")){
+			dr.get(keys);
+		}
+		else{
 		dr.get(OR.getProperty(keys));
+		}
 		// APP_LOGS.debug("Navigation is done");
 		return "PASS";
 	}
 
+	public String checkNavigateURL(String keys1) throws InterruptedException, Exception{
+	
+		System.out.println(keys1.split("\\|")[0]);
+		System.out.println(keys1.split("\\|")[1]);
+		
+		if(!keys1.split("\\|")[0].equals("Y")){
+			navigateURL(keys1.split("\\|")[1]);
+		}
+		else{
+			
+			navigateURL(keys1.split("\\|")[1]);
+			click(obj.getLocator("login_link"));
+			input(obj.getLocator("emailtxt_box"), "jakay34@gmail.com");
+			input(obj.getLocator("pwdtxt_box"), "12345678");
+			click(obj.getLocator("submit_btn"));
+			//navigateURL(keys1.split("\\|")[1]);
+		}
+		return "PASS";
+	}
+	
+
+	public String checkPagination(String objectkeys,String keys) throws Exception {
+		
+		 String text1= objectkeys.split("\\|")[0];
+		 String text2= objectkeys.split("\\|")[1];
+		 String text3= objectkeys.split("\\|")[2];
+		 System.out.println(text3);
+		 System.out.println(keys);
+		if(keys.equals("Y")){
+			Actions act = new Actions(dr);
+			List<WebElement> projectNamelink= dr.findElements(obj.getLocator(text1));
+			System.out.println(projectNamelink.size());
+			APP_LOGS.info("Size is"+projectNamelink.size());
+			int oldLink = projectNamelink.size();
+			int newLink =0;
+			while(oldLink!=newLink){
+				
+				act.moveToElement(projectNamelink.get(oldLink-1)).build().perform();
+				Thread.sleep(5000);
+				act.moveToElement(dr.findElement(obj.getLocator(text2))).build().perform();
+				act.moveToElement(dr.findElement(obj.getLocator(text3))).build().perform();
+				Thread.sleep(5000);
+				newLink = oldLink;
+				projectNamelink=  dr.findElements(obj.getLocator(text1));
+				oldLink = projectNamelink.size();
+				
+				System.out.println(oldLink);
+				APP_LOGS.info("Size is"+oldLink);
+			}
+		}
+		
+		
+		return "PASS";
+	}
 	public String verifyTitle(String objectkeys) {
 
 		System.out.println(dr.getTitle());
@@ -171,12 +269,12 @@ public class Keywords {
 	public String click(By locator) throws InterruptedException {
 
 		// APP_LOGS.debug("Clicking the link");
-		Thread.sleep(3000);
+		waitUtilFind(locator);
 		dr.findElement(locator).click();
 		return "PASS";
 	}
 
-	public String input(By locator, String data) {
+	public String input(By locator, String data) throws InterruptedException {
 		// APP_LOGS.debug("Entering the field");
 		dr.findElement(locator).sendKeys(data);
 
@@ -202,10 +300,92 @@ public class Keywords {
 		}
 		return "PASS";
 	}
+	
+	public String linkCheck() throws IOException, InterruptedException{
+		
+		
+      List<WebElement> listOfaTag= dr.findElements(By.tagName("a"));
+		
+		//for(int i=0; i< listOfaTag.size();i++)
+		//{
+			//System.out.println(listOfaTag.get(i));
+			
+			listOfaTag.addAll(dr.findElements(By.tagName("img")));
+			System.out.println(listOfaTag.size());
+			for(WebElement lst:listOfaTag){ 
+				if(lst.getAttribute("href")!=null){
+				//System.out.println(lst.getAttribute("href"));
+					
+						check_Status(lst.getAttribute("href"));
+					
+				}
+			//}
+		}
+	
+		return "PASS";
+		
+	}
 
 	/*
 	 * ADDITIONAL FUNCTIONALITY KEYWORDS*
 	 */
+
+		public void check_Status(String attribute) throws IOException {
+			
+			if(attribute.startsWith("http")){
+				URL url = new URL(attribute);
+				
+				 conn = (HttpURLConnection)url.openConnection();
+				
+				try{
+					conn.connect();
+					//System.out.println(conn.getResponseCode());
+					if(conn.getResponseCode()==200){
+						System.out.println("---------------------------------------------------------------------");
+						System.out.println(attribute +"->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+conn.getResponseCode());
+						APP_LOGS.info("---------------------------------------------------------------------");
+						APP_LOGS.info(attribute +"->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+conn.getResponseCode());
+					}
+					else if(conn.getResponseCode()==500){
+						System.out.println("---------------------------------------------------------------------");
+						System.out.println(attribute +"->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+conn.getResponseCode());
+						APP_LOGS.info("---------------------------------------------------------------------");
+						APP_LOGS.info(attribute +"->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+conn.getResponseCode());
+					}
+					else if(conn.getResponseCode()==404){
+						System.out.println("---------------------------------------------------------------------");
+						System.out.println(attribute +"->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+conn.getResponseCode());
+						APP_LOGS.info("---------------------------------------------------------------------");
+						APP_LOGS.info(attribute +"->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+conn.getResponseCode());
+					}
+					else if(conn.getResponseCode()==402){
+						System.out.println("---------------------------------------------------------------------");
+						System.out.println(attribute +"->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+conn.getResponseCode());
+						APP_LOGS.info("---------------------------------------------------------------------");
+						APP_LOGS.info(attribute +"->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+conn.getResponseCode());
+					}
+					else 
+					{
+						System.out.println("---------------------------------------------------------------------");
+						System.out.println(attribute +"->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+conn.getResponseCode());
+						APP_LOGS.info("---------------------------------------------------------------------");
+						APP_LOGS.info(attribute +"->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+conn.getResponseCode());
+					}
+				}
+				catch(IOException e){
+					System.out.println(e.getMessage());
+				}
+			}
+				else{
+					System.out.println("---------------------------------------------------------------------");
+					System.out.println(attribute +"->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+conn.getResponseCode());
+					APP_LOGS.info("---------------------------------------------------------------------");
+					APP_LOGS.info(attribute +"->>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+conn.getResponseCode());
+			}
+			
+			
+		}
+		
 
 	public static Keywords getInstance() {
 
@@ -218,7 +398,6 @@ public class Keywords {
 
 		}
 		return keywords;
-
 	}
 
 }

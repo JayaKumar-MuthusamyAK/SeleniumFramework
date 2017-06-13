@@ -12,4 +12,34 @@
       </class> <!-- com.testcases.Login_Page -->
     </classes>
   </test> <!-- Login_Page Test(failed) -->
+  <test name="Sign_Up Page Test(failed)">
+    <classes>
+      <class name="com.testcases.Login_Page">
+        <methods>
+          <include name="extentReportStart"/>
+          <include name="extentReportEnd"/>
+        </methods>
+      </class> <!-- com.testcases.Login_Page -->
+      <class name="com.testcases.SignUp_Page">
+        <methods>
+          <include name="testcase2" invocation-numbers="0 1 2 3 4 5 6 7 8"/>
+        </methods>
+      </class> <!-- com.testcases.SignUp_Page -->
+    </classes>
+  </test> <!-- Sign_Up Page Test(failed) -->
+  <test name="Broken_Link Test(failed)">
+    <classes>
+      <class name="com.testcases.Broken_LinkTest">
+        <methods>
+          <include name="BrokenLink" invocation-numbers="0 1 2 3 4 5"/>
+        </methods>
+      </class> <!-- com.testcases.Broken_LinkTest -->
+      <class name="com.testcases.Login_Page">
+        <methods>
+          <include name="extentReportStart"/>
+          <include name="extentReportEnd"/>
+        </methods>
+      </class> <!-- com.testcases.Login_Page -->
+    </classes>
+  </test> <!-- Broken_Link Test(failed) -->
 </suite> <!-- Failed suite [Functionality Test] -->
